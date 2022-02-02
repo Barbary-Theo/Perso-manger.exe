@@ -10,11 +10,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Loading Page',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+          scaffoldBackgroundColor: const Color(0xFFFBD295)
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Loading Page'),
+
     );
   }
 }
@@ -42,28 +43,26 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
+          children: <Widget> [
             Text(
-              '$_counter',
+              'manger.exe',
               style: Theme.of(context).textTheme.headline4,
             ),
+            Container(
+              margin: const EdgeInsets.only(top: 150.0),
+              child: Image.asset('assets/logo.png',
+                width: 100,
+                height: 100,
+              ),
+            ),
           ],
+
+
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
