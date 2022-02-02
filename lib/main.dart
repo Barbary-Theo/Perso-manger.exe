@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:footer/footer.dart';
+import 'package:footer/footer_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -59,9 +61,15 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
           ],
-
-
         ),
+      ),
+      bottomSheet: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: const <Widget>[
+          Text(
+            'Version: 1.0.0',
+          ),
+        ],
       ),
     );
   }
