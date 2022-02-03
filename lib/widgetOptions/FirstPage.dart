@@ -12,12 +12,20 @@ class FirstPage extends StatefulWidget {
 class _FirstPageState extends State<FirstPage> {
 
 
+  _printOui() {
+    print("oui");
+  }
+
   @override
   Widget build(BuildContext context) {
 
-    return const Scaffold(
+    return  Scaffold(
       body: Center(
-        child: Text("oui"),
+        child: Column(
+          children: <Widget> [
+
+          ],
+        ),
       ),
     );
   }

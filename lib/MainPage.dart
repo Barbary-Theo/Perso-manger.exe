@@ -35,6 +35,12 @@ class _MyMainPageState extends State<MainPage> {
     });
   }
 
+  void _resetIndex() {
+    setState(() {
+      _selectedIndex = 1;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
 
@@ -42,13 +48,14 @@ class _MyMainPageState extends State<MainPage> {
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
-
+      floatingActionButton: FloatingActionButton(
+        onPressed: _resetIndex,
+        tooltip: 'Increment',
+        child: Image.asset('assets/logo.png', width: 65, height: 65.0),
+        backgroundColor:  const Color(0xFFFFF8E1),
+      ),
+      floatingActionButtonLocation:  FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndex,
-        backgroundColor:  const Color(0xFFFBD295),
-        selectedItemColor: Colors.white,
-        onTap: _onItemTapped,
-        type: BottomNavigationBarType.fixed,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.add),
@@ -58,15 +65,21 @@ class _MyMainPageState extends State<MainPage> {
             icon: ImageIcon(
               AssetImage('assets/logo.png'),
             ),
+
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_today_sharp),
+            icon: ImageIcon(
+              AssetImage('assets/view.png'),
+            ),
             label: ''
           ),
         ],
-
-
+        currentIndex: _selectedIndex,
+        backgroundColor:  const Color(0xFFFBD295),
+        selectedItemColor: Colors.white,
+        onTap: _onItemTapped,
+        type: BottomNavigationBarType.fixed,
       ),
     );
   }
