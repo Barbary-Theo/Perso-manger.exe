@@ -1,8 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:footer/footer.dart';
-import 'package:footer/footer_view.dart';
+import 'dart:io';
 
-void main() {
+import 'package:flutter/material.dart';
+import 'package:manger_exe/MainPage.dart';
+
+Future<void> main() async {
   runApp(const MyApp());
 }
 
@@ -12,33 +13,44 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Loading Page',
       theme: ThemeData(
-          scaffoldBackgroundColor: const Color(0xFFFBD295)
+          scaffoldBackgroundColor: const Color(0xFFFFF8E1)
       ),
-      home: const MyHomePage(title: 'Loading Page'),
-
+      home: const LoadingPage(title: 'Loading Page'),
+      routes: {
+        '': (context) => const LoadingPage(title: "Loading Page"),
+        'mainPage': (context) => const MainPage(title: "Main Page"),
+      },
+      initialRoute: '/',
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+class LoadingPage extends StatefulWidget {
+  const LoadingPage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<LoadingPage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+class _MyHomePageState extends State<LoadingPage> {
 
-  void _incrementCounter() {
-    setState(() {
+  _MyHomePageState()  {
+    changePage();
+  }
 
-      _counter++;
-    });
+  void changePage() async {
+    await Future.delayed(const Duration(seconds : 2));
+    await Navigator.pushNamed(context, 'mainPage');
+  }
+
+
+  void tmpFunction() {
+    Navigator.pushNamed(context, 'mainPage');
   }
 
   @override
@@ -54,10 +66,13 @@ class _MyHomePageState extends State<MyHomePage> {
               style: Theme.of(context).textTheme.headline4,
             ),
             Container(
-              margin: const EdgeInsets.only(top: 150.0),
-              child: Image.asset('assets/logo.png',
-                width: 100,
-                height: 100,
+              margin: const EdgeInsets.only(top: 100.0),
+              child: InkWell(
+                onTap: tmpFunction,
+                child: ClipRRect(
+                  child: Image.asset('assets/logo.png',
+                      width: 100.0, height: 100.0),
+                ),
               ),
             ),
           ],
@@ -67,7 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: const <Widget>[
           Text(
-            'Version: 1.0.0',
+            'Version: 1.0.0, by Barbary',
           ),
         ],
       ),
