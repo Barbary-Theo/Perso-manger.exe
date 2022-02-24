@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:manger_exe/MainPage.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 Future<void> main() async {
   runApp(const MyApp());
@@ -40,6 +41,7 @@ class LoadingPage extends StatefulWidget {
 class _MyHomePageState extends State<LoadingPage> {
 
   bool _flag = false;
+  int nbConnection = 0;
 
   _MyHomePageState()  {
     _flag = false;
@@ -47,11 +49,16 @@ class _MyHomePageState extends State<LoadingPage> {
   }
 
   void changePage() async {
+    final prefs = await SharedPreferences.getInstance();
+    nbConnection =  prefs.getInt('nb') ?? 0;
+    nbConnection += 1;
+    prefs.setInt('nb', nbConnection);
+
     await Future.delayed(const Duration(seconds : 5));
     await Navigator.pushNamed(context, 'mainPage');
   }
 
-  void _changeState(){
+  void _changeState() async {
     _flag = true;
   }
 
