@@ -19,22 +19,29 @@ class _SecondPageState extends State<SecondPage> {
       body: Center(
         child: ListView(
           children: [
+            Center(
+                child: Text("Lundi")
+            ),
             Row(
               children: [
-                Card(
-                  color: new Color(0xFFFFEBCD),
-                  child: ListTile(
-                      title: Center(
-                          child: Text("Test")
-                      )
+                SizedBox (
+                  width: MediaQuery.of(context).size.width /2,
+                  height: MediaQuery.of(context).size.height /6,
+                  child: Card(
+                    color: new Color(0xFFFFEBCD),
+                    child: Center(
+                        child: Text("Test")
+                    ),
                   ),
                 ),
-                Card(
-                  color: new Color(0xFFFFEBCD),
-                  child: ListTile(
-                      title: Center(
-                          child: Text("Test")
-                      )
+                SizedBox (
+                  width: MediaQuery.of(context).size.width /2,
+                  height: MediaQuery.of(context).size.height /6,
+                  child: Card(
+                    color: new Color(0xFFFFEBCD),
+                    child: Center(
+                        child: Text("Test")
+                    ),
                   ),
                 ),
               ]
