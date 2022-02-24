@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:manger_exe/widgetOptions/FirstPage.dart';
 import 'package:manger_exe/widgetOptions/SecondPage.dart';
 import 'package:manger_exe/widgetOptions/ThirdPage.dart';
+import 'dart:math';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key, required this.title}) : super(key: key);
@@ -9,12 +10,12 @@ class MainPage extends StatefulWidget {
   final String title;
 
   @override
-  State<MainPage> createState() => _MyMainPageState();
+  State<MainPage> createState() => MyMainPageState();
 }
 
-class _MyMainPageState extends State<MainPage> {
+class MyMainPageState extends State<MainPage> {
 
-  int _selectedIndex = 0;
+  int _selectedIndex = 1;
 
   @override
   void initState() {
@@ -39,6 +40,15 @@ class _MyMainPageState extends State<MainPage> {
     setState(() {
       _selectedIndex = 1;
     });
+  }
+
+  static String getRandomColor() {
+    List<String> color = <String>[
+      "blue", "colorless", "green", "orange", "pink", "red", "white", "yellow"
+    ];
+
+    var rng = Random();
+    return color[rng.nextInt(8)];
   }
 
   @override

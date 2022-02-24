@@ -54,7 +54,7 @@ class _MyHomePageState extends State<LoadingPage> {
     nbConnection += 1;
     prefs.setInt('nb', nbConnection);
 
-    await Future.delayed(const Duration(seconds : 5));
+    await Future.delayed(const Duration(seconds : 2));
     await Navigator.pushNamed(context, 'mainPage');
   }
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../MainPage.dart';
 
 class SecondPage extends StatefulWidget {
   const SecondPage({Key? key, required this.title}) : super(key: key);
@@ -19,43 +20,327 @@ class _SecondPageState extends State<SecondPage> {
       body: Center(
         child: ListView(
           children: [
-            Center(
-                child: Text("Lundi")
-            ),
-            Row(
-              children: [
-                SizedBox (
-                  width: MediaQuery.of(context).size.width /2,
-                  height: MediaQuery.of(context).size.height /6,
-                  child: Stack(
-                    children: <Widget>[
-                      Card(
-                        color: new Color(0xFFFFEBCD),
-                        child: Center(
-                            child: Text("Test")
-                        ),
+            Container(
+              child: Column(
+                children: [
+                  const Center(
+                    child: Text(
+                      "Lundi",
+                      style: TextStyle(
+                        fontSize: 25,
                       ),
-                      Container(
-                        margin: const EdgeInsets.only(top: 0.0),
-                        child:  Center(
-                          child: Image.asset('assets/blue_plate.png'),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                SizedBox (
-                  width: MediaQuery.of(context).size.width /2,
-                  height: MediaQuery.of(context).size.height /6,
-                  child: Card(
-                    color: new Color(0xFFFFEBCD),
-                    child: Center(
-                        child: Text("Test")
                     ),
                   ),
-                ),
-              ]
+                  Row(
+                      children: [
+                        SizedBox (
+                          width: MediaQuery.of(context).size.width /2,
+                          child: Column(
+                            children: <Widget>[
+                              Card(
+                                  color: new Color(0xFFFFEBCD),
+                                  child: Column(
+                                    children: [
+                                      Image.asset(
+                                        'assets/'+ MyMainPageState.getRandomColor() +'_plate.png',
+                                        height: 150,
+                                      ),
+                                      Center(
+                                          child: Text("Test")
+                                      ),
+                                    ],
+                                  )
+
+                              ),
+
+                            ],
+                          ),
+                        ),
+                        SizedBox (
+                          width: MediaQuery.of(context).size.width /2,
+                          child: Column(
+                            children: <Widget>[
+                              Card(
+                                  color: new Color(0xFFFFEBCD),
+                                  child: Column(
+                                    children: [
+                                      Image.asset(
+                                        'assets/'+ MyMainPageState.getRandomColor() +'_plate.png',
+                                        height: 150,
+                                      ),
+                                      Center(
+                                          child: Text("Test")
+                                      ),
+                                    ],
+                                  )
+
+                              ),
+
+                            ],
+                          ),
+                        ),
+                      ]
+                  ),
+                ],
+              ),
             ),
+            Container(
+              child: Column(
+                children: [
+                  const Center(
+                    child: Text(
+                      "Mardi",
+                      style: TextStyle(
+                        fontSize: 25,
+                      ),
+                    ),
+                  ),
+                  Row(
+                      children: [
+                        SizedBox (
+                          width: MediaQuery.of(context).size.width /2,
+                          child: Column(
+                            children: <Widget>[
+                              Card(
+                                  color: new Color(0xFFFFEBCD),
+                                  child: Column(
+                                    children: [
+                                      Image.asset(
+                                        'assets/'+ MyMainPageState.getRandomColor() +'_plate.png',
+                                        height: 150,
+                                      ),
+                                      Center(
+                                          child: Text("Test")
+                                      ),
+                                    ],
+                                  )
+
+                              ),
+
+                            ],
+                          ),
+                        ),
+                        SizedBox (
+                          width: MediaQuery.of(context).size.width /2,
+                          child: Column(
+                            children: <Widget>[
+                              Card(
+                                  color: new Color(0xFFFFEBCD),
+                                  child: Column(
+                                    children: [
+                                      Image.asset(
+                                        'assets/'+ MyMainPageState.getRandomColor() +'_plate.png',
+                                        height: 150,
+                                      ),
+                                      Center(
+                                          child: Text("Test")
+                                      ),
+                                    ],
+                                  )
+
+                              ),
+
+                            ],
+                          ),
+                        ),
+                      ]
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              child: Column(
+                children: [
+                  const Center(
+                    child: Text(
+                      "Mercredi",
+                      style: TextStyle(
+                        fontSize: 25,
+                      ),
+                    ),
+                  ),
+                  Row(
+                      children: [
+                        SizedBox (
+                          width: MediaQuery.of(context).size.width /2,
+                          child: Column(
+                            children: <Widget>[
+                              Card(
+                                  color: new Color(0xFFFFEBCD),
+                                  child: Column(
+                                    children: [
+                                      Image.asset(
+                                        'assets/'+ MyMainPageState.getRandomColor() +'_plate.png',
+                                        height: 150,
+                                      ),
+                                      Center(
+                                          child: Text("Test")
+                                      ),
+                                    ],
+                                  )
+
+                              ),
+
+                            ],
+                          ),
+                        ),
+                        SizedBox (
+                          width: MediaQuery.of(context).size.width /2,
+                          child: Column(
+                            children: <Widget>[
+                              Card(
+                                  color: new Color(0xFFFFEBCD),
+                                  child: Column(
+                                    children: [
+                                      Image.asset(
+                                        'assets/'+ MyMainPageState.getRandomColor() +'_plate.png',
+                                        height: 150,
+                                      ),
+                                      Center(
+                                          child: Text("Test")
+                                      ),
+                                    ],
+                                  )
+
+                              ),
+
+                            ],
+                          ),
+                        ),
+                      ]
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              child: Column(
+                children: [
+                  const Center(
+                    child: Text(
+                      "Jeudi",
+                      style: TextStyle(
+                        fontSize: 25,
+                      ),
+                    ),
+                  ),
+                  Row(
+                      children: [
+                        SizedBox (
+                          width: MediaQuery.of(context).size.width /2,
+                          child: Column(
+                            children: <Widget>[
+                              Card(
+                                  color: new Color(0xFFFFEBCD),
+                                  child: Column(
+                                    children: [
+                                      Image.asset(
+                                        'assets/'+ MyMainPageState.getRandomColor() +'_plate.png',
+                                        height: 150,
+                                      ),
+                                      Center(
+                                          child: Text("Test")
+                                      ),
+                                    ],
+                                  )
+
+                              ),
+
+                            ],
+                          ),
+                        ),
+                        SizedBox (
+                          width: MediaQuery.of(context).size.width /2,
+                          child: Column(
+                            children: <Widget>[
+                              Card(
+                                  color: new Color(0xFFFFEBCD),
+                                  child: Column(
+                                    children: [
+                                      Image.asset(
+                                        'assets/'+ MyMainPageState.getRandomColor() +'_plate.png',
+                                        height: 150,
+                                      ),
+                                      Center(
+                                          child: Text("Test")
+                                      ),
+                                    ],
+                                  )
+
+                              ),
+
+                            ],
+                          ),
+                        ),
+                      ]
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              child: Column(
+                children: [
+                  const Center(
+                    child: Text(
+                      "Vendredi",
+                      style: TextStyle(
+                        fontSize: 25,
+                      ),
+                    ),
+                  ),
+                  Row(
+                      children: [
+                        SizedBox (
+                          width: MediaQuery.of(context).size.width /2,
+                          child: Column(
+                            children: <Widget>[
+                              Card(
+                                  color: new Color(0xFFFFEBCD),
+                                  child: Column(
+                                    children: [
+                                      Image.asset(
+                                        'assets/'+ MyMainPageState.getRandomColor() +'_plate.png',
+                                        height: 150,
+                                      ),
+                                      Center(
+                                          child: Text("Test")
+                                      ),
+                                    ],
+                                  )
+
+                              ),
+
+                            ],
+                          ),
+                        ),
+                        SizedBox (
+                          width: MediaQuery.of(context).size.width /2,
+                          child: Column(
+                            children: <Widget>[
+                              Card(
+                                  color: new Color(0xFFFFEBCD),
+                                  child: Column(
+                                    children: [
+                                      Image.asset(
+                                        'assets/'+ MyMainPageState.getRandomColor() +'_plate.png',
+                                        height: 150,
+                                      ),
+                                      Center(
+                                          child: Text("Test")
+                                      ),
+                                    ],
+                                  )
+
+                              ),
+
+                            ],
+                          ),
+                        ),
+                      ]
+                  ),
+                ],
+              ),
+            ),
+
           ],
         ),
       ),
