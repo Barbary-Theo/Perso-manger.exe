@@ -39,18 +39,20 @@ class LoadingPage extends StatefulWidget {
 
 class _MyHomePageState extends State<LoadingPage> {
 
+  bool _flag = false;
+
   _MyHomePageState()  {
+    _flag = false;
     changePage();
   }
 
   void changePage() async {
-    await Future.delayed(const Duration(seconds : 2));
+    await Future.delayed(const Duration(seconds : 5));
     await Navigator.pushNamed(context, 'mainPage');
   }
 
-
-  void tmpFunction() {
-    Navigator.pushNamed(context, 'mainPage');
+  void _changeState(){
+    _flag = true;
   }
 
   @override
@@ -68,10 +70,15 @@ class _MyHomePageState extends State<LoadingPage> {
             Container(
               margin: const EdgeInsets.only(top: 100.0),
               child: InkWell(
-                onTap: tmpFunction,
+                onTap: _changeState,
                 child: ClipRRect(
-                  child: Image.asset('assets/logo.png',
-                      width: 100.0, height: 100.0),
+                  child: AnimatedContainer(
+                    width: _flag ? 500 : 100,
+                    height: _flag ? 500 : 100,
+                    duration: const Duration(seconds: 2),
+                    child: Image.asset('assets/logo.png',
+                        width: 100.0, height: 100.0),
+                  ),
                 ),
               ),
             ),
